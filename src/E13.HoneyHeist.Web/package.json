@@ -12,10 +12,13 @@
     "web-vitals": "^4.2.4"
   },
   "devDependencies": {
-    "@babel/plugin-proposal-private-property-in-object": "^7.21.11"
+    "@azure/static-web-apps-cli": "^2.0.1",
+    "@babel/plugin-proposal-private-property-in-object": "^7.21.11",
+    "azure-functions-core-tools": "^4.0.6610"
   },
   "scripts": {
-    "start": "react-scripts start",
+    "start": "swa start http://localhost:3000 --run \"react-scripts start\" --api-devserver-url http://localhost:7181",
+    "start-dev": "swa start http://localhost:3000 --run \"react-scripts start\" --api-location ../E13.HoneyHeist.Api",
     "build": "react-scripts build",
     "test": "react-scripts test",
     "eject": "react-scripts eject"
