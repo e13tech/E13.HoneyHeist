@@ -20,6 +20,12 @@ const Login = () => {
     }
   ];
 
+  const apiTest = () => {
+    fetch('/api/Ping')
+    .then(response => response)
+    .then(data => alert(data));
+  };
+
   return (
     <Container className="d-flex justify-content-center align-items-center vh-100">
       <Card className="p-4 text-center">
@@ -35,6 +41,12 @@ const Login = () => {
               Login with {provider.name}
             </Button>
           ))}
+          <Button
+            key={'api_test'}
+            onClick={apiTest}
+            >
+            API Test
+            </Button>
         </div>
       </Card>
     </Container>

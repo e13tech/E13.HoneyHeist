@@ -1,6 +1,4 @@
-using Aspire.Hosting;
 using Microsoft.Extensions.Hosting;
-using static System.Runtime.InteropServices.JavaScript.JSType;
 
 var builder = DistributedApplication.CreateBuilder(args);
 
@@ -20,8 +18,7 @@ var api = builder
     .AddAzureFunctionsProject<Projects.E13_HoneyHeist_Api>("api")
     .WithHostStorage(storage)
     .WithReference(blobs)
-    .WithExternalHttpEndpoints()
-    ;
+    .WithExternalHttpEndpoints();
 
 var web = builder.AddNpmApp("web", "../E13.HoneyHeist.Web")
     .WithEnvironment("BROWSER", "none") // Disable opening browser on npm start
